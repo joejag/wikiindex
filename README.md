@@ -1,16 +1,16 @@
 # wikiindex
 
-A simple Clojure webservice for indexing Wikimedia XML abstracts
+A simple Clojure webservice for indexing Wikimedia XML abstracts.
 
 ## The problem
 
-Wikimedia publishes an XML abstract of their articles at: http://dumps.wikimedia.org/enwiki/latest/enwiki-latest-abstract23.xml
+WikiMedia publishes an XML abstract of their articles at: http://dumps.wikimedia.org/enwiki/latest/enwiki-latest-abstract23.xml
 
-We want to be able to search on the <title> and <abstract> from each abstract in the XML dump.
+We want to be able to search on the ```<title>``` and ```<abstract>``` from each abstract in the XML dump.
 
 This search is exposed over an endpoint at: http://localhost:5000/search?q=SearchTerm
 
-The search results will contain the ```<title>```, ```<url>``` and ```<abstract>```:
+The search results will contain the ```<title>```, ```<abstract>``` and ```<url>```:
 
 ```
 {

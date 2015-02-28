@@ -2,10 +2,10 @@
   (:require [midje.sweet :refer :all]
             [wikiindex.core :refer :all]))
 
-(fact "the home page should return succesfully"
+(fact "home page route exists"
       (:status (app {:uri "/"
                      :request-method :get})) => 200)
 
-(fact "search is deliberately broken for now - testing bidi"
+(fact "search route exists"
       (:status (app {:uri "/search"
                      :request-method :get})) => 200)
