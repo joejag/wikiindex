@@ -10,3 +10,7 @@ pom.xml.asc
 .lein-plugins/
 .lein-failures
 enwiki-latest-abstract23.xml
+*.iml
+*.ipr
+*.iws
+.idea/
