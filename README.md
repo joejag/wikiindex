@@ -1,14 +1,11 @@
 # wikiindex
 
-A Clojure library designed to ... well, that part is up to you.
+A simple Clojure webservice for indexing Wikimedia XML abstracts
 
 ## Usage
 
-FIXME
+```lein run```
 
-## License
+## Contributing
 
-Copyright © 2015 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+CI on Snap-CI: [https://snap-ci.com/joejag/wikiindex/branch/master]
