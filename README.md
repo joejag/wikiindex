@@ -8,4 +8,6 @@ A simple Clojure webservice for indexing Wikimedia XML abstracts
 
 ## Contributing
 
-CI on Snap-CI: [https://snap-ci.com/joejag/wikiindex/branch/master]
+Our architectural decisions have [been recorded](doc/arch)
+
+CI on Snap-CI: https://snap-ci.com/joejag/wikiindex/branch/master
