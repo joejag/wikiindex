@@ -1,6 +1,6 @@
 # wikiindex
 
-A simple Clojure webservice for indexing Wikimedia XML abstracts.
+A simple Clojure webservice for searching Wikimedia XML abstracts.
 
 ## The problem
 
@@ -39,6 +39,8 @@ open http://localhost:5000
 ```
 
 ## Contributing
+
+To start the app in dev mode run the ```develop.sh``` script.
 
 Our architectural decisions have [been recorded](doc/arch)
 

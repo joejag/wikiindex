@@ -1,6 +1,6 @@
-(ns wikiindex.core-test
+(ns wikiindex.blastoff-test
   (:require [midje.sweet :refer :all]
-            [wikiindex.core :refer :all]))
+            [wikiindex.blastoff :refer :all]))
 
 (fact "home page route exists"
       (:status (app {:uri "/"
