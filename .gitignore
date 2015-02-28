@@ -14,3 +14,4 @@ enwiki-latest-abstract23.xml
 *.ipr
 *.iws
 .idea/
+.nrepl-port
