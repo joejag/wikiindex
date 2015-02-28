@@ -3,9 +3,7 @@
             [wikiindex.blastoff :refer :all]))
 
 (fact "home page route exists"
-      (:status (app {:uri "/"
-                     :request-method :get})) => 200)
+      (app {:uri "/" :request-method :get}) => (contains {:body anything}))
 
 (fact "search route exists"
-      (:status (app {:uri "/search"
-                     :request-method :get})) => 200)
+      (app {:uri "/search" :request-method :get}) => (contains {:body anything}))

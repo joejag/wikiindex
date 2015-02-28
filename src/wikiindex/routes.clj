@@ -4,13 +4,12 @@
             [wikiindex.search :refer [search]]))
 
 (defn serve-index [_]
-  {:status 200
-   :body   "Welcome to WikiIndex!"})
+  {:body "Welcome to WikiIndex!"})
 
-(defn serve-search [_]
-  (let [search-result (search nil nil)]
-    {:status       200
-     :content-type "application/json"
+(defn serve-search [request]
+  (let [serach-query (get-in request [:query-params "q"])
+        search-result (search serach-query nil)]
+    {:content-type "application/json"
      :body         (json/generate-string search-result)}))
 
 (def routes ["/" {""       {:get serve-index}

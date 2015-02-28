@@ -1,4 +1,4 @@
 (ns wikiindex.search)
 
-(defn search [request index]
-  {})
+(defn search [request _]
+  {:q request})
