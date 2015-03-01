@@ -4,6 +4,7 @@
 
 (def manchester {:title "Manchester" :abstract "Manchsster is a city" :url "url"})
 (def london {:title "London" :abstract "London is a city" :url "url"})
+(def cities [manchester london])
 
 (facts "a map containing search results is given"
        (fact "your search query request is returned in the response"
@@ -14,6 +15,10 @@
 
 (facts "can find search results"
        (fact "no possible matches"
-             (search-for "missing" []) => [])
+             (search-for "unknown" cities) => [])
+
        (fact "exact match on title"
-             (search-for "Manchester" [manchester]) => [manchester]))
+             (search-for "Manchester" cities) => [manchester])
+
+       (fact "exact match on abstracts"
+             (search-for "city" cities) => [manchester london]))

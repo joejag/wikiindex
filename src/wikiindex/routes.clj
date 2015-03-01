@@ -8,9 +8,9 @@
 
 (defn serve-search [request]
   (let [serach-query (get-in request [:query-params "q"])
-        search-result (search serach-query nil)]
+        search-results (search serach-query [])]
     {:content-type "application/json"
-     :body         (json/generate-string search-result)}))
+     :body         (json/generate-string search-results)}))
 
 (def routes ["/" {""       {:get serve-index}
                   "search" {:get serve-search}
