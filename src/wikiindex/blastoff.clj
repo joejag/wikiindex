@@ -1,13 +1,16 @@
 (ns wikiindex.blastoff
-  (:require [bidi.ring :as bidi]
-            [ring.adapter.jetty :as jetty]
-            [ring.middleware.params :as params]
-            [wikiindex.routes :as routes]))
+  (:require [ring.adapter.jetty :as jetty]
+            [wikiindex.data-provider :as data-provider]
+            [wikiindex.routing :as routing]
+            [wikiindex.logger :as log]))
 
-(def app (-> routes/routes
-             (bidi/make-handler)
-             params/wrap-params))
+(defn blastoff []
+  (let [db (data-provider/read-from-local-cache)]))
 
 (defn -main [& _]
-  ; download file from http://localhost:5000/public/enwiki-latest-abstract23.xml
-  (jetty/run-jetty app {:port 5000 :join? false}))
+  (blastoff)
+  (log/starting-http-server)
+  (jetty/run-jetty routing/app {:port 5000 :join? false}))
+
+
+
