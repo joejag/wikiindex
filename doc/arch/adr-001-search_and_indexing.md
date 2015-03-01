@@ -1,5 +1,7 @@
 # Search choices
 
+**DEPRECATED BY ADR-007**
+
 ## Context
 
 * We need to index and search a 32Mb XML file.
@@ -28,6 +30,10 @@
 * A document database like Mongo could store a JSON representation.
 * It's native search would probably .
 * This approach can be taken it the atom approach takes too long to index the XML file on startup.
+
+### Lucene in-process
+
+* Use the Clucy library to create an in memory Lucene index
 
 ## Consequences
 
