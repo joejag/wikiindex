@@ -5,13 +5,14 @@
             [wikiindex.core.search :refer [search]]))
 
 (defn homepage-handler [_]
-  {:body "Welcome to Wiki Index!"})
+  {:headers {"content-type" "text/html"}
+   :body    "<h2>Welcome to Wiki Index!</h2>Check out <a href='/search?q=title'>our search</a>"})
 
 (defn serve-search [request index]
   (let [search-query (get-in request [:query-params "q"])
         search-results (search search-query index)]
-    {:content-type "application/json"
-     :body         (json/generate-string search-results)}))
+    {:headers {"content-type" "application/json"}
+     :body    (json/generate-string search-results)}))
 
 (defn routes [search-handler]
   ["/" {""       {:get homepage-handler}
