@@ -1,19 +1,24 @@
 (ns wikiindex.blastoff
   (:require [ring.adapter.jetty :as jetty]
-            [wikiindex.data-provider :as data-provider]
-            [wikiindex.routing :as routing]
-            [wikiindex.indexer :as indexer]
-            [wikiindex.logger :as log]))
+            [wikiindex.core.data-provider :as data-provider]
+            [wikiindex.core.routing :as routing]
+            [wikiindex.core.indexer :as indexer]
+            [wikiindex.plumbing.logger :as log]
+            [wikiindex.plumbing.config :as config]))
 
-(defn blastoff []
-  (let [db (data-provider/read-from-local-cache)
-        index (indexer/parse db)]
-    (log/count-loaded index)))
+(defn blastoff [db]
+  (let [index (indexer/parse db)]
+    (log/count-loaded index)
+    (routing/app index)))
 
-(defn -main [& _]
-  (blastoff)
-  (log/starting-http-server)
-  (jetty/run-jetty routing/app {:port 5000 :join? false}))
+(defn blastoff-testing [request]
+  (let [handler (blastoff (data-provider/load-fake))]
+    (handler request)))
+
+(defn -main []
+  (let [handler (blastoff (data-provider/load-wikimedia))]
+    (log/starting-http-server)
+    (jetty/run-jetty handler {:port (config/port) :join? false})))
 
 
 

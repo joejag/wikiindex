@@ -1,4 +1,4 @@
-(ns wikiindex.logger)
+(ns wikiindex.plumbing.logger)
 
 (defn indexing-file []
   (println " * Indexing file"))

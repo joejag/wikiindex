@@ -10,9 +10,9 @@
 
 ## Decision
 
-* We will parse the file on startup, store it as a clojure map in an atom.
+* We will parse the file on startup, store it as a clojure collection that is available throughout the system.
 * We will do this before the web server http port is available.
-* Searches will be performed against this in memory atom.
+* Searches will be performed against this in memory collection.
 * The app would need to be restarted to parse a new XML file, unless an additional endpoint is added.
 
 ## Alternatives considered
@@ -31,4 +31,6 @@
 
 ## Consequences
 
-* The application needs 0.5Gb RAM to run with 130K documents loaded in memory
+* The application needs 0.5Gb RAM to run with 130K documents loaded in memory, 400mb seems to be due to our approach
+* Search is O(n)
+* The average response time with 10 concurrent requests is 2 seconds, which will probably be unacceptable

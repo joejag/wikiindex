@@ -38,6 +38,13 @@ lein run
 open http://localhost:5000
 ```
 
+You can optionally set the port and search results limit:
+
+```
+PORT=5001 SEARCH_RESULTS_LIMIT=2 lein run
+open http://localhost:5001
+```
+
 ## Contributing
 
 To start the app in dev mode run the ```develop.sh``` script.
