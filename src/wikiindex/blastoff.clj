@@ -19,6 +19,3 @@
   (let [handler (blastoff (data-provider/load-wikimedia))]
     (log/starting-http-server)
     (jetty/run-jetty handler {:port (config/port) :join? false})))
-
-
-
