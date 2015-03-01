@@ -28,3 +28,7 @@
 * A document database like Mongo could store a JSON representation.
 * It's native search would probably .
 * This approach can be taken it the atom approach takes too long to index the XML file on startup.
+
+## Consequences
+
+* The application needs 0.5Gb RAM to run with 130K documents loaded in memory

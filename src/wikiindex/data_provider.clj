@@ -1,14 +1,8 @@
 (ns wikiindex.data-provider
-  (:require [clojure.xml :as xml]
-            [clojure.java.io :as io]
-            [wikiindex.logger :as log]))
+  (:require [clojure.java.io :as io]))
 
 (def ^:private cached-wikimedia-dump
-  (io/file (io/resource "enwiki-latest-abstract23.xml")))
-
-(defn read-from [place]
-  (log/reading-file-to-xml)
-  (xml/parse place))
+  (io/input-stream (io/resource "enwiki-latest-abstract23.xml")))
 
 (defn read-from-local-cache []
-  (read-from cached-wikimedia-dump))
+  cached-wikimedia-dump)

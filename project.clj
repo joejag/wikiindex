@@ -3,7 +3,8 @@
             :dependencies [[org.clojure/clojure "1.6.0"]
                            [ring "1.3.2"]
                            [bidi "1.18.7"]
-                           [cheshire "5.4.0"]]
+                           [cheshire "5.4.0"]
+                           [org.clojure/data.xml "0.0.8"]]
             :main wikiindex.blastoff
             :aot [wikiindex.blastoff]
             :ring {:init wikiindex.blastoff/blastoff

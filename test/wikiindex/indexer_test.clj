@@ -1,12 +1,13 @@
 (ns wikiindex.indexer-test
   (:require [midje.sweet :refer :all]
-            [clojure.xml :as xml]
+            [clojure.zip :as zip]
             [wikiindex.indexer :refer :all]
             [clojure.java.io :as io]))
 
-; filter xml map to just what we want
-; save in atom
-(def xml-input (xml/parse (io/file (io/resource "two-docs.xml"))))
+(defn create-xml-inputstream []
+  (io/input-stream (io/resource "two-docs.xml")))
 
+(fact "parses wikimedia dump into map"
+      (first (parse (create-xml-inputstream))) => {:title "title 1" :abstract "abstract 1" :url "url 1"}
+      (second (parse (create-xml-inputstream))) => {:title "title 2" :abstract "abstract 2" :url "url 2"})
 
-(future-fact "filter xml to reduced clojure map")
