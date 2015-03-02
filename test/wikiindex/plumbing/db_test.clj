@@ -8,3 +8,7 @@
       (let [db (subject/create-db)]
         (subject/index db manchester)
         (subject/search db "Manchester")) => [manchester])
+
+(fact "can load whole database from collection"
+      (let [db (subject/init [manchester manchester])]
+        (subject/search db "Manchester") => [manchester manchester]))
