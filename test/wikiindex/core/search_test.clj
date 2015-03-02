@@ -14,7 +14,7 @@
        (fact "you get a list of results back"
              (subject/search irrelevant []) => (contains {:results irrelevant})))
 
-(facts "can find search results"
+(facts "has search results"
        (fact "no possible matches"
              (subject/search-for "unknown" cities) => [])
 

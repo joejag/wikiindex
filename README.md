@@ -33,6 +33,10 @@ Constraints:
 
 ## Usage
 
+Try it online at https://wikiindex.herokuapp.com/
+
+To run locally:
+
 ```
 lein run
 open http://localhost:5000

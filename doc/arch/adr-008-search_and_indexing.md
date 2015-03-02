@@ -1,5 +1,7 @@
 # Search choices
 
+**Proposed**
+
 ## Context
 
 * As per ADR-007
