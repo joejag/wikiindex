@@ -3,7 +3,7 @@
 ## Context
 
 * We are building a web app that has one official url that uses query params
-* The url is /search?serach=token
+* The url is /search?q=search-term
 * We believe that future endpoints will be added, or more complicated search requests
 
 ## Decision
