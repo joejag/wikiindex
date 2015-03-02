@@ -1,6 +1,6 @@
 # Search choices
 
-**Proposed**
+**PROPOSED**
 
 ## Context
 
