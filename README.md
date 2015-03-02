@@ -14,7 +14,7 @@ This search is exposed over an endpoint at: http://localhost:5000/search?q=Searc
 
 The search results will contain the ```<title>```, ```<abstract>``` and ```<url>```:
 
-```JSON
+```javascript
 {
  "q":"manchester",
  "results":[
