@@ -2,6 +2,8 @@
 
 A simple Clojure webservice for searching Wikimedia XML abstracts.
 
+Try it online at https://wikiindex.herokuapp.com
+
 ## The problem
 
 WikiMedia publishes an XML abstract of their articles at: http://dumps.wikimedia.org/enwiki/latest/enwiki-latest-abstract23.xml
@@ -33,8 +35,6 @@ Constraints:
 
 ## Usage
 
-Try it online at https://wikiindex.herokuapp.com/
-
 To run locally:
 
 ```
@@ -55,4 +55,4 @@ To start the app in dev mode run the ```develop.sh``` script.
 
 Our architectural decisions have [been recorded](doc/arch)
 
-CI on Snap-CI: https://snap-ci.com/joejag/wikiindex/branch/master
+CI and automatic deployment by Snap-CI: https://snap-ci.com/joejag/wikiindex/branch/master
