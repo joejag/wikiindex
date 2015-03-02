@@ -14,7 +14,7 @@ This search is exposed over an endpoint at: http://localhost:5000/search?q=Searc
 
 The search results will contain the ```<title>```, ```<abstract>``` and ```<url>```:
 
-```
+```JSON
 {
  "q":"manchester",
  "results":[
@@ -37,14 +37,14 @@ Constraints:
 
 To run locally:
 
-```
+```Shell
 lein run
 open http://localhost:5000
 ```
 
 You can optionally set the port and search results limit:
 
-```
+```Shell
 PORT=5001 SEARCH_RESULTS_LIMIT=2 lein run
 open http://localhost:5001
 ```
