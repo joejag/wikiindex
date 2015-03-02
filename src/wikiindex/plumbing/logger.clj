@@ -3,9 +3,6 @@
 (defn indexing-file []
   (println " * Indexing file"))
 
-(defn creating-lucene-index []
-  (println " * Creating Lucene index"))
-
 (defn starting-http-server []
   (println " * Starting http server"))
 

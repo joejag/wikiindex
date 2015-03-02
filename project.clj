@@ -5,7 +5,6 @@
                            [bidi "1.18.7"]
                            [cheshire "5.4.0"]
                            [environ "1.0.0"]
-                           [clucy "0.4.0"]
                            [org.clojure/data.xml "0.0.8"]]
             :main wikiindex.blastoff
             :aot [wikiindex.blastoff]

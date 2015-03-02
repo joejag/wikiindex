@@ -1,5 +1,7 @@
 # Search choices
 
+**DEPRECATED BY ADR-008**
+
 ## Context
 
 * As per ADR-001
@@ -7,12 +9,11 @@
 
 ## Decision
 
-* We will Clucy which is a Clojure library on top of Lucene
+* We will use Clucy which is a Clojure library on top of Lucene
 
 ## Consequences
 
-* Clucy takes 40 minutes to index. This is probably acceptable for a file that only updates twice a month
+* Clucy takes over an hour to index. This is probably acceptable for a file that only updates twice a month
 * Given this startup time, it is undesirable to run in memory
 * The response time is now 28ms
-* The architecture needs to be remade to run as a separate process
-
+* We should move to ElasticSearch as moving the loading of the index to a separate process would require the same amount of work

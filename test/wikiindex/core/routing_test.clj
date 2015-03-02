@@ -1,6 +1,5 @@
 (ns wikiindex.core.routing-test
   (:require [midje.sweet :refer :all]
-            [wikiindex.plumbing.db :as db]
             [wikiindex.core.routing :as subject]))
 
 (fact "home page route exists"
